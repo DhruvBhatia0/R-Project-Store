@@ -272,3 +272,29 @@ ensemble_refit_tbl %>%
   ) %>% 
   group_by(id) %>% 
   plot_modeltime_forecast(.facet_ncol = 2)
+
+
+#   library(rtableau)
+
+# # Create a Tableau workbook
+# workbook <- tableau$createWorkbook()
+
+# # Create a Tableau worksheet
+# worksheet <- workbook$createWorksheet("Forecast Visualization")
+
+# # Convert the forecast data to a data frame
+# forecast_data <- ensemble_refit_tbl %>% 
+#   modeltime_forecast(
+#     new_data = future_tbl,
+#     actual_data = data_prepared_tbl,
+#     keep_data = TRUE
+#   ) %>% 
+#   group_by(id) %>% 
+#   modeltime_table() %>% 
+#   as.data.frame()
+
+# # Add the forecast data to the Tableau worksheet
+# worksheet$addDataFrame(forecast_data, startRow = 1, startCol = 1)
+
+# # Publish the workbook to Tableau Server or save it as a Tableau file
+# workbook$saveWorkbook("path/to/forecast_visualization.twb")
